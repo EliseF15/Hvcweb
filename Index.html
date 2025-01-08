@@ -1,1 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Herbert Vissers College</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+ 
+        .header {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+ 
+        .top-section {
+            display: flex;
+            align-items: center; /* Zorgt ervoor dat alles gecentreerd is */
+            padding: 10px 20px;
+            background-color: #f4f4f4;
+        }
+ 
+        .logo {
+            width: 230px;
+            height: auto;
+            margin-right: 20px;
+            margin-left: 15%;
+        }
+ 
+        .search-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center vertically */
+            align-items: flex-start; /* Align items to the start */
+            margin-top: 0,5%;
+            color: #29235c;
+            margin-left: 3%;
+        }
 
+        input{
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 30px;
+            width: 100%;
+        }
+        
+        .search-section h1 {
+            font-size: 24px;
+            color: black;
+        }
+        
+        .utility-links {
+            margin-top: 5px;
+            font-size: 16px;
+            color: #240263;
+            display: flex; /* Flexbox voor horizontale plaatsing */
+            align-items: center; /* Zorgt ervoor dat ze op dezelfde hoogte staan */
+            gap: 15px; /* Ruimte tussen de links */
+        }
+ 
+        .utility-links a {
+            text-decoration: none;
+            color: #240263;
+        }
+ 
+        .utility-links a:hover {
+            text-decoration: underline;
+            color: #3e8fa3;
+        }
+ 
+        .arrow {
+            font-size: 150%;
+            color: #03bb84;
+            margin-left: 50%;
+            margin-right: 30%;
+            overflow-y: visible;
+        }
+ 
+        /* Achtergrondsectie */
+        .background {
+            background-image: linear-gradient(to right, #240263 10%, transparent 20%, transparent 80%, #240263 90%),
+                linear-gradient(to right, #240263 0%, transparent 10%, transparent 90%, #240263 100%), 
+                url('slider-hvc-hvc.webp');
+            background-size: cover;
+            background-position: center;
+            height: 650px; /* Hoogte van de achtergrond */
+            position: relative;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            margin-top: 1%;
+        }
+ 
+        .background-logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+ 
+        .background-logo img {
+            width: 70%;
+            height: auto;
+            margin-left: 60%;
+            margin-top: 15%;
+        }
+ 
+        .background-text {
+            font-size: 48px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            margin-top: 25%; /* Ruimte tussen de tekst en de links */
+            text-align: center;
+        }
+ 
+        .links {
+            margin-top: 20px; /* Ruimte tussen de achtergrondtekst en de links */
+            position: relative; /* Laat de links boven de achtergrondafbeelding liggen */
+            z-index: 1; /* Zorgt ervoor dat de links boven de afbeelding liggen */
+            display: flex; /* Flexbox voor het horizontaal plaatsen van de links */
+            gap: 20px; /* Ruimte tussen de links */
+
+        }
+ 
+        .links a {
+            text-decoration: none;
+            color:  #240263;
+        }
+ 
+        .links a:hover {
+            text-decoration: underline;
+            color: #009c82;
+        }
+
+        .kennismaken {
+            background-color:rgb(220, 227, 233);
+            padding: 5%;
+            width: auto;
+            height: 5%;
+            margin-top: 5%;
+        }
+
+        .agenda {
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .planning {
+            margin-top: 1,5%;
+            margin-left: 17%;
+            color: #240263;
+        }
+
+        .nieuws {
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .nieuwsbericht {
+            margin-top: 1,5%;
+            margin-left: 15%;
+            color: #240263;
+        }
+
+        .btn1 {
+            background-color:#240263;
+            border-color: #240263;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        .btn1:hover {
+            background-color: white;
+            color: #240263;
+            
+        }
+
+        .btn2 {
+            background-color:white;
+            border-color: #240263;
+            color: #240263;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        .btn2:hover {
+            background-color: #240263;
+            color: white;
+        }
+
+        .btn3 {
+            background-color:white;
+            border: none;
+            color: #240263;
+            padding: 5px 10px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: 0.3s;
+            border-radius: 16px;
+        }
+
+        .btn3:hover {
+            background-color:white;
+            color: #3e8fa3;
+        }
+        
+        .btn4 {
+            background-color:white;
+            border-color: #240263;
+            color: #240263;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition: 0.3s;
+            border-radius: 30px;
+            margin-top: 4%;
+        }
+
+        .btn4:hover {
+            background-color: #240263;
+            color: white;
+        }
+
+        .button4 {
+            text-align: center;
+        }
+
+        .opendag {
+            margin-left: 17%;
+            margin-top: 5%;
+        }
+
+</style>
+ 
+    <header class="header">
+<!-- Bovenste gedeelte: Logo aan de linkerkant en links met een pijltje -->
+<div class="top-section">
+<img src="logo hvc.svg" alt="HVC Logo" class="logo"> <!-- SVG logo helemaal links -->
+<div class="search-section">
+<input type="search" placeholder="waar ben je naar op zoek: ➔" style="font-size: 125%;">
+<div class="utility-links">
+<span class="arrow">➔</span>
+<a href="#">Ziekmelden</a>
+<a href="#" style="color: #009c82;"><b>|</b></a>
+<a href="#">Downloads</a>
+<a href="#" style="color: #009c82;"><b>|</b></a>
+<a href="#">Magister</a>
+<a href="#" style="color: #009c82;"><b>|</b></a>
+<a href="#">Zermelo</a>
+<a href="#">Werken bij hvc</a>
+</div>
+<!-- Links onder de bovenste sectie, nu naast elkaar -->
+<div class="links">
+<button class="btn3">Leerlingen & Ouders</button>
+<button class="btn3">Onze School</button>
+<button class="btn3">Ondersteuning</button>
+<button class="btn3">Actueel</button>
+<button class="btn2">Ons onderwijs</button>
+<button class="btn1">Groep 7 en 8</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Achtergrondafbeelding met tekst en logo rechtsboven -->
+<div class="background">   
+<div class="background-logo">
+<img src="logo.svg" alt="Logo">
+</div>
+<div class="background-text">
+<b>Samen </b>morgen maken
+</div>
+</div>
+<div class="opendag">
+<img src="open-dagen_2025.png" alt="opendag" style="width: 40%;height: auto;border-radius: 40px;"> <h1 style="float: right;margin-right: 30%;">Kom naar onze Open Dagen!</h1> <p style="float: right;margin-right: 30%; margin-left: 42%;">Ben jij een leerling in groep 7 of 8 en/of ouder van een leerling in groep 7/8 en ben je benieuwd naar het HVC? Kom dan op donderdag 30 of vrijdag 31 januari 2025 naar onze Open Dagen. Maak kennis met onze enthousiaste docenten, proef de sfeer van onze school en kom alles te weten over de mavo Sportklas, de Ondernemende havo, Wetenschapsoriëntatie op het vwo, wat HVX is en natuurlijk de praktijkvakken bij het vmbo.</p>
+</div>
+<div class="agenda">
+<H1>Onze agenda</H1>
+</div>
+<div class="planning">
+<h1 style="margin-left: 2%;">02 - 13</h1>
+<p style="margin-left: 2%;"><b>DEC - DEC</b></p>
+<hr style="margin-right: 17%;">
+<h1 style="margin-left: 2%;">16 - 20</h1>
+<p style="margin-left: 2%;"><b>DEC - DEC</b></p>
+<hr style="margin-right: 17%;">
+<h1 style="margin-left: 2%;">16</h1>
+<p style="margin-left: 2%;"><b>DEC</b></p>
+</div>
+<div class="button4">
+<button class="btn4">bekijk de volledige agende ></button>
+</div>
+<div class="nieuws">
+<h1>Laatste nieuws</h1>
+</div>
+<div class="nieuwsbericht">
+<img src="oudercontactdag-swirl.png" alt="oudercontact" style="width: 25%;height: auto;border-radius: 30px;"> <img src="super8dag.png" alt="super8dag" style="width: 25%;height: auto;margin-left: 2%;border-radius: 30px;"> <img src="flits-nov.png" alt="oudercontact" style="width: 25%;height: auto;margin-left: 2%;border-radius: 30px;">
+</div>
+<div class="button4">
+<button class="btn4">bekijk alle nieuwsberichten ></button>
+</div>
+<div class="kennismaken" style="background-color:rgb(220, 227, 233);color:#240263;padding:5%;">
+<h1 style="margin-left: 12%;">Kom kennis maken op het HVC</h1>
+<img src="kom langs op het hvc.png" alt="kennismaken" style="float:right;width:15%;height:auto;border-radius: 20px;">
+<p style="margin-left: 12%;">Een spannende en leuke tijd breekt aan: de oriëntatie op het voortgezet onderwijs! Om jullie goed te helpen bij deze belangrijke keuze, nodigen wij jullie van harte uit om het HVC beter te leren kennen. We organiseren verschillende activiteiten, zoals kennismakingsmiddagen, boeiende masterclasses, inloopmomenten en natuurlijk onze open dagen.</p>
+<p style="margin-left: 12%;">Op deze pagina vind je alle informatie over onze activiteiten en hoe je eraan kunt deelnemen. Het is een geweldige kans om de sfeer te proeven, vragen te stellen en te ontdekken of het HVC bij jullie past.</p> 
+<p style="margin-left: 12%;">We kijken ernaar uit jullie te verwelkomen!</p>
+</div>
+</header>
+</body>
+</html>
